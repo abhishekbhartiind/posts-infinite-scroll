@@ -31,6 +31,10 @@ function TopCommentsBox(props) {
     }
   }
 
+  const sendCommentHandler = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <form>
       <section className="commentBox">
@@ -44,11 +48,17 @@ function TopCommentsBox(props) {
           onKeyUp={commentStroke}
         />
         {/*Underline begins here*/}
-        <div className="commentLine"></div>
+        {showCommentLine && <div className="commentLine"></div>}
       </section>
       {showButtons && (
         <>
-          <button className="commentButton sendButton">Comment</button>
+          <button
+            className="commentButton sendButton"
+            disabled={enableBtn}
+            onClick={sendCommentHandler}
+          >
+            Comment
+          </button>
           <button
             className="commentButton"
             style={{ color: "gray", backgroundColor: "transparent" }}
