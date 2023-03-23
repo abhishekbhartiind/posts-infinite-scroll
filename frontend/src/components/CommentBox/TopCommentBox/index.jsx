@@ -22,7 +22,14 @@ function TopCommentsBox(props) {
   }
 
   //If Input value isn't empty then ENABLE the COMMENT BTN.
-  const commentStroke = (event) => {}
+  const commentStroke = (event) => {
+    let currMessage = event.target.value
+    if (currMessage) {
+      setEnableBtn(false)
+    } else {
+      setEnableBtn(true)
+    }
+  }
 
   return (
     <form>
@@ -32,10 +39,28 @@ function TopCommentsBox(props) {
           type="text"
           placeholder="Add a public comment..."
           ref={message}
+          onFocus={commentFocus}
+          onBlur={commentFocusOut}
+          onKeyUp={commentStroke}
         />
         {/*Underline begins here*/}
         <div className="commentLine"></div>
       </section>
+      {showButtons && (
+        <>
+          <button className="commentButton sendButton">Comment</button>
+          <button
+            className="commentButton"
+            style={{ color: "gray", backgroundColor: "transparent" }}
+            onClick={() => {
+              setShowButtons(false)
+              message.current.value = ""
+            }}
+          >
+            Cancel
+          </button>
+        </>
+      )}
     </form>
   )
 }
