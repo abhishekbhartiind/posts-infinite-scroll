@@ -1,1 +1,1 @@
-# Getting Started with Create React App
+# Posts with image / like and comment section
