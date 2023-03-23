@@ -7,6 +7,24 @@ const Message = (props) => {
   const [arrowUp, setArrowUp] = useState(false)
   const [openReply, setOpenReply] = useState(false)
 
+  //Toggled when CANCEL button and REPLY button are pressed
+  const changeOpenReply = () => {
+    setOpenReply((prevState) => (prevState = !prevState))
+  }
+  //Toggle arrow up and down
+  let arrow = <i className="fas fa-caret-down"></i>
+  const changeArrow = () => {
+    setArrowUp((prevState) => (prevState = !prevState))
+  }
+  if (arrowUp) {
+    arrow = <i className="fas fa-caret-up"></i>
+  } else {
+    arrow = <i className="fas fa-caret-down"></i>
+  }
+
+  const likeComment = () => {}
+  const deleteMessage = () => {}
+
   return (
     <>
       <section className="messageContainer">
@@ -24,6 +42,7 @@ const Message = (props) => {
           )}
         </section>
         <section className="arrowReplies">
+          {arrow}
           <div>View 4 replies</div>
         </section>
       </section>
