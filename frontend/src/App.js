@@ -1,5 +1,5 @@
 import "./App.css"
-import TopCommentBox from "./components/CommentBox/TopCommentBox"
+import TopCommentBox from "./components/CommentBox/TopCommentBox/index"
 import MessageScroll from "./components/MessageScroll"
 
 function App() {

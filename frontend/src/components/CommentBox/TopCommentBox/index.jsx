@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import "../CommentsBox.css"
+import "../CommentBox.css"
 
 function TopCommentsBox(props) {
   const message = useRef(null)
