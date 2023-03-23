@@ -1,9 +1,10 @@
 import "./App.css"
+import TopCommentBox from "./components/CommentBox/TopCommentBox"
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <TopCommentBox autoFocus={false} />
     </div>
   )
 }
